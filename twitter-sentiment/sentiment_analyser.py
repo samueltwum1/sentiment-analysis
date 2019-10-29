@@ -20,7 +20,7 @@ from tweepy import Stream
 import twitter_credential
  
 
-class TwitterStreamer():
+class TwitterStreamer(object):
     """
     Class for streaming live tweets.
     """
@@ -107,7 +107,7 @@ class StdOutListener(StreamListener):
             # time is up, so stop streaming
             return False
           
-    def on_error(self, status):
+    def on_error(self, status_code):
         # if twitter tells us off return false
         if status_code == 420:
             # returning False in on_data disconnects the stream
